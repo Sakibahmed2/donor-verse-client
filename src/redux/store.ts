@@ -1,7 +1,7 @@
 import { configureStore } from "@reduxjs/toolkit";
 import { baseApi } from "./api/baseApi";
 import loginReducer from "./features/auth/Login/loginSlice";
-import supplyReducer from "./features/supply/supplySlice";
+import supplyReducer from "./features/user/supplySlice";
 import storage from "redux-persist/lib/storage";
 import {
   persistReducer,

@@ -2,7 +2,7 @@ import { NavLink } from "react-router-dom";
 import Container from "../../components/ui/Container";
 import SectionTitle from "../../components/ui/SectionTitle";
 import SupplyCard from "../../components/ui/SupplyCard";
-import { useGetAllSupplyQuery } from "../../redux/features/supply/supplyApi";
+import { useGetAllSupplyQuery } from "../../redux/features/user/supplyApi";
 import { ArrowRightOutlined } from "@ant-design/icons";
 
 export type TSupplyItems = {

@@ -1,4 +1,4 @@
-import { useGetAllSupplyQuery } from "../../redux/features/supply/supplyApi";
+import { useGetAllSupplyQuery } from "../../redux/features/user/supplyApi";
 import { Carousel, Spin } from "antd";
 import Container from "../../components/ui/Container";
 import { TSupplyItems } from "./SuppliesHome";

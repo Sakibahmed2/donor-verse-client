@@ -2,7 +2,7 @@ import { Spin } from "antd";
 import {
   useDeleteSupplyMutation,
   useGetAllSupplyQuery,
-} from "../../redux/features/supply/supplyApi";
+} from "../../redux/features/user/supplyApi";
 import { TSupplyItems } from "../Home/SuppliesHome";
 import { DeleteOutlined, EditFilled } from "@ant-design/icons";
 import ModalUi from "../../components/ui/Modal";

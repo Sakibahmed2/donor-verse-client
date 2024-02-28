@@ -1,4 +1,4 @@
-import { useGetAllSupplyQuery } from "../../redux/features/supply/supplyApi";
+import { useGetAllSupplyQuery } from "../../redux/features/user/supplyApi";
 import SupplyCard from "../../components/ui/SupplyCard";
 import { TSupplyItems } from "./SuppliesHome";
 import Container from "../../components/ui/Container";

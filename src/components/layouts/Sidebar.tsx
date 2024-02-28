@@ -10,12 +10,18 @@ const items = [
     label: <NavLink to="/dashboard">Dashboard</NavLink>,
   },
   {
+    key: "Create supplies",
+    label: <NavLink to="/dashboard/create-supply">Create supply</NavLink>,
+  },
+  {
     key: "Supplies",
     label: <NavLink to="/dashboard/supplies">Supplies</NavLink>,
   },
   {
-    key: "Create supplies",
-    label: <NavLink to="/dashboard/create-supply">Create supply</NavLink>,
+    key: "Create testimonials",
+    label: (
+      <NavLink to="/dashboard/create-testimonial">Create testimonials</NavLink>
+    ),
   },
 ];
 

@@ -2,7 +2,7 @@ import { FieldValues } from "react-hook-form";
 import MyForm from "../../components/form/MyForm";
 import MyInput from "../../components/form/MyInput";
 import MyTextArea from "../../components/form/MyTextArea";
-import { useAddSupplyMutation } from "../../redux/features/supply/supplyApi";
+import { useAddSupplyMutation } from "../../redux/features/user/supplyApi";
 import { toast } from "sonner";
 
 const CreateSupply = () => {

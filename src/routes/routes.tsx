@@ -8,6 +8,7 @@ import Supplies from "../pages/dashboard/Supplies";
 import Register from "../pages/register/Register";
 import AllSupplies from "../pages/Home/AllSupplies";
 import Dashboard from "../pages/dashboard/Dashboard";
+import CreateTestimonial from "../pages/dashboard/CreateTestimonial";
 
 const routes = createBrowserRouter([
   {
@@ -39,6 +40,10 @@ const routes = createBrowserRouter([
       {
         path: "create-supply",
         element: <CreateSupply />,
+      },
+      {
+        path: "create-testimonial",
+        element: <CreateTestimonial />,
       },
     ],
   },
