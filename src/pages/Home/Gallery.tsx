@@ -16,8 +16,6 @@ const Gallery = () => {
     );
   }
 
-  console.log(data?.data);
-
   return (
     <Container className="mt-40">
       <div>

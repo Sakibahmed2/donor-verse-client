@@ -6,6 +6,7 @@ import {
   useForm,
 } from "react-hook-form";
 import cn from "../../utils/cn";
+import { Form } from "antd";
 
 type TFormProps = {
   onSubmit: SubmitHandler<FieldValues>;
@@ -16,6 +17,11 @@ type TFormProps = {
 const MyForm = ({ onSubmit, children, className }: TFormProps) => {
   const methods = useForm();
 
+  const submit: SubmitHandler<FieldValues> = (data) => {
+    onSubmit(data);
+    methods.reset();
+  };
+
   return (
     <FormProvider {...methods}>
       <div
@@ -24,12 +30,13 @@ const MyForm = ({ onSubmit, children, className }: TFormProps) => {
           className
         )}
       >
-        <form
-          onSubmit={methods.handleSubmit(onSubmit)}
+        <Form
+          layout="vertical"
+          onFinish={methods.handleSubmit(submit)}
           className="bg-white p-10 rounded-lg drop-shadow-lg "
         >
           {children}
-        </form>
+        </Form>
       </div>
     </FormProvider>
   );

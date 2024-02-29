@@ -42,6 +42,7 @@ const Navbar = () => {
       {isAuthenticated ? (
         <>
           <NavLink to="/dashboard">Dashboard</NavLink>
+          <NavLink to="/volunteer">Become volunteer</NavLink>
           <NavLink to="/">
             <button className="custom-btn-outline" onClick={handleLogout}>
               Logout
@@ -91,7 +92,7 @@ const Navbar = () => {
               {/* Navigation links */}
               <div className="hidden sm:block sm:ml-6 ">
                 <nav>
-                  <ul className="flex items-center space-x-10 justify-end   text-lg">
+                  <ul className="flex items-center space-x-5 justify-end  text-lg">
                     {navOption}
                   </ul>
                 </nav>

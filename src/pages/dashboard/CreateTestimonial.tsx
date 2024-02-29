@@ -6,6 +6,11 @@ import { useAddTestimonialsMutation } from "../../redux/features/user/testimonia
 import { TResponse } from "../../types/global";
 import { toast } from "sonner";
 
+type TTestimonialsData = {
+  success: boolean;
+  message: string;
+};
+
 const CreateTestimonial = () => {
   const [addTestimonials] = useAddTestimonialsMutation();
 
@@ -20,8 +25,10 @@ const CreateTestimonial = () => {
     const toastId = toast.loading("Loading");
 
     try {
-      const res = (await addTestimonials(testimonialData)) as TResponse<any>;
-      console.log(res);
+      const res = (await addTestimonials(
+        testimonialData
+      )) as TResponse<TTestimonialsData>;
+      console.log(res.data);
 
       if (res?.data?.success) {
         toast.success("Testimonials posted", { id: toastId });
