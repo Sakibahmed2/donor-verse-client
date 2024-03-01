@@ -46,8 +46,8 @@ const CreateTestimonial = () => {
         <MyInput name="name" label="Your name" type="text" />
         <MyInput name="title" label="Title" type="text" />
         <MyTextArea name="description" label="Description" />
-        <button type="submit" className="custom-btn-outline  w-full">
-          Submit
+        <button type="submit" className="custom-btn-outline  w-full text-lg">
+          Post testimonials
         </button>
       </MyForm>
     </div>

@@ -1,18 +1,17 @@
 import { configureStore } from "@reduxjs/toolkit";
-import { baseApi } from "./api/baseApi";
-import loginReducer from "./features/auth/Login/loginSlice";
-import supplyReducer from "./features/user/supplySlice";
-import storage from "redux-persist/lib/storage";
 import {
-  persistReducer,
-  persistStore,
   FLUSH,
-  REHYDRATE,
   PAUSE,
   PERSIST,
   PURGE,
   REGISTER,
+  REHYDRATE,
+  persistReducer,
+  persistStore,
 } from "redux-persist";
+import storage from "redux-persist/lib/storage";
+import { baseApi } from "./api/baseApi";
+import loginReducer from "./features/auth/Login/loginSlice";
 
 const persistConfigs = {
   key: "login",
@@ -25,7 +24,6 @@ export const store = configureStore({
   reducer: {
     [baseApi.reducerPath]: baseApi.reducer,
     login: persistLoginReducer,
-    supply: supplyReducer,
   },
 
   middleware: (getDefaultMiddleware) =>
