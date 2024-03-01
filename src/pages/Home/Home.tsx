@@ -1,4 +1,3 @@
-import AboutUs from "./AboutUs";
 import Banner from "./Banner";
 import FeaturesPosts from "./FeaturesPosts";
 import Footer from "./Footer";
@@ -19,8 +18,6 @@ const Home = () => {
       {/* My two section */}
       <FeaturesPosts />
       <ResponseProtocols />
-
-      <AboutUs />
 
       <Footer />
     </div>

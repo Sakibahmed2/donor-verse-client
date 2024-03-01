@@ -10,6 +10,7 @@ import AllSupplies from "../pages/Home/AllSupplies";
 import Dashboard from "../pages/dashboard/Dashboard";
 import CreateTestimonial from "../pages/dashboard/CreateTestimonial";
 import VolunteerForm from "../pages/volunteer/VolunteerForm";
+import AboutUs from "../pages/About/AboutUs";
 
 const routes = createBrowserRouter([
   {
@@ -27,6 +28,10 @@ const routes = createBrowserRouter([
       {
         path: "/volunteer",
         element: <VolunteerForm />,
+      },
+      {
+        path: "/about-us",
+        element: <AboutUs />,
       },
     ],
   },

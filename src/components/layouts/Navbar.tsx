@@ -39,15 +39,15 @@ const Navbar = () => {
     <>
       <NavLink to="/">Home</NavLink>
       <NavLink to="/supplies">All Supplies</NavLink>
+      <NavLink to="/about-us">About</NavLink>
       {isAuthenticated ? (
         <>
-          <NavLink to="/dashboard">Dashboard</NavLink>
           <NavLink to="/volunteer">Become volunteer</NavLink>
-          <NavLink to="/">
-            <button className="custom-btn-outline" onClick={handleLogout}>
-              Logout
-            </button>
-          </NavLink>
+          <NavLink to="/dashboard">Dashboard</NavLink>
+
+          <button className="custom-btn-outline" onClick={handleLogout}>
+            Logout
+          </button>
         </>
       ) : (
         <NavLink to="/login">

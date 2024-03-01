@@ -6,7 +6,8 @@ import { useAddVolunteerMutation } from "../../redux/features/user/volunteerApi"
 import { toast } from "sonner";
 import { TResponse } from "../../types/global";
 
-type TVolunteerData = {
+export type TVolunteerData = {
+  _id?: string;
   name: string;
   image: string;
   birthDate: string;
