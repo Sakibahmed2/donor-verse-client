@@ -1,10 +1,12 @@
+import { CloseOutlined, MenuOutlined } from "@ant-design/icons";
+import { Switch } from "antd";
 import { motion } from "framer-motion";
+import { useState } from "react";
 import { NavLink } from "react-router-dom";
 import logo from "../../assets/images/logo.png";
+import { useTheme } from "../../context/ThemeContaxt";
 import { logOut } from "../../redux/features/auth/Login/loginSlice";
 import { useAppDispatch, useAppSelector } from "../../redux/hooks";
-import { useState } from "react";
-import { CloseOutlined, MenuOutlined } from "@ant-design/icons";
 
 const navAnimation = {
   hidden: {
@@ -34,6 +36,7 @@ const Navbar = () => {
   const handleLogout = () => {
     dispatch(logOut());
   };
+  const { theme, toggleTheme } = useTheme();
 
   const navOption = (
     <>
@@ -45,22 +48,33 @@ const Navbar = () => {
           <NavLink to="/volunteer">Become volunteer</NavLink>
           <NavLink to="/dashboard">Dashboard</NavLink>
 
-          <button className="custom-btn-outline" onClick={handleLogout}>
+          <button
+            className="custom-btn py-1 px-2 font-normal"
+            onClick={handleLogout}
+          >
             Logout
           </button>
         </>
       ) : (
         <NavLink to="/login">
-          <button className="custom-btn">Login</button>
+          <button className="custom-btn py-1 px-2 font-normal">Login</button>
         </NavLink>
       )}
+      <Switch
+        onChange={toggleTheme}
+        checkedChildren={"Dark"}
+        unCheckedChildren={"Light"}
+        defaultChecked
+        className="w-14"
+      />
     </>
   );
 
   return (
     <div className="overflow-hidden">
       <motion.div
-        className="w-full fixed z-40 bg-white drop-shadow-lg  text-black md:h-16 "
+        style={{ background: theme.background, color: theme.text }}
+        className={`w-full fixed z-40 drop-shadow-lg  text-black md:h-16 `}
         variants={navAnimation}
         initial="hidden"
         animate="visible"

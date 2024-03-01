@@ -1,15 +1,21 @@
 import SectionTitle from "../../components/ui/SectionTitle";
 import Container from "../../components/ui/Container";
+import { useTheme } from "../../context/ThemeContaxt";
 
 const ResponseProtocols = () => {
+  const { theme } = useTheme();
+
   return (
-    <Container className="bg-gray-100 py-20 mt-32 rounded-md">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 md:px-8">
+    <Container className=" py-20 mt-32 rounded-md">
+      <div
+        style={{ background: theme.background, color: theme.text }}
+        className="max-w-6xl mx-auto px-4 sm:px-6 md:px-8"
+      >
         <div className="text-center">
-          <h2 className="text-3xl font-extrabold text-gray-900 sm:text-4xl">
+          <h2 className="text-3xl font-extrabold  sm:text-4xl">
             <SectionTitle heading=" Emergency Response Protocols" />
           </h2>
-          <p className="mt-4 text-md text-gray-600">
+          <p className="mt-4 text-md text-gray-500">
             Learn about our comprehensive emergency response protocols to
             efficiently manage health and medical supplies in post-disaster
             scenarios.

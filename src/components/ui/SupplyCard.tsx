@@ -3,6 +3,7 @@ import { Card } from "antd";
 import Meta from "antd/es/card/Meta";
 import ModalUi from "./Modal";
 import { useState } from "react";
+import { useTheme } from "../../context/ThemeContaxt";
 
 const SupplyCard = ({ items }: any) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -12,9 +13,14 @@ const SupplyCard = ({ items }: any) => {
     setIsModalOpen(false);
   };
 
+  const { theme } = useTheme();
+
   return (
     <div className="drop-shadow-lg">
-      <Card cover={<img alt="example" src={image} />}>
+      <Card
+        style={{ background: theme.background, color: theme.text }}
+        cover={<img alt="example" src={image} />}
+      >
         <Meta title={title} />
         <div className="flex flex-col justify-start space-y-2 mt-4">
           <p>Category: {category}</p>
