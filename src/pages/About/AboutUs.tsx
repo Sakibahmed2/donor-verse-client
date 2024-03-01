@@ -7,8 +7,6 @@ import VolunteersCard from "./VolunteersCard";
 const AboutUs = () => {
   const { data: volunteerData } = useGetAllVolunteerQuery(undefined);
 
-  console.log(volunteerData?.data);
-
   return (
     <div>
       {/* about us */}
