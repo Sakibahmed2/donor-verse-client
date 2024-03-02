@@ -8,9 +8,11 @@ const donationApi = baseApi.injectEndpoints({
         method: "POST",
         body: data,
       }),
-      invalidatesTags: ["supplies"],
+    }),
+    getAllDonation: builder.query({
+      query: () => "/donations",
     }),
   }),
 });
 
-export const { useAddDonationsMutation } = donationApi;
+export const { useAddDonationsMutation, useGetAllDonationQuery } = donationApi;

@@ -46,6 +46,7 @@ const Navbar = () => {
       {isAuthenticated ? (
         <>
           <NavLink to="/volunteer">Become volunteer</NavLink>
+          <NavLink to="/leaderboard">Leaderboard</NavLink>
           <NavLink to="/dashboard">Dashboard</NavLink>
           <NavLink to="/community">Community</NavLink>
 
