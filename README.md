@@ -1,4 +1,4 @@
-### Live link: https://charity-compass.vercel.app/
+### Live link: https://donor-verse.vercel.app/
 
 # Donor verse
 

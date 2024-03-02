@@ -8,18 +8,25 @@ import { useAddDonationsMutation } from "../../redux/features/user/donationApi";
 import { toast } from "sonner";
 import { TResponse } from "../../types/global";
 import { useAppSelector } from "../../redux/hooks";
+import { useNavigate } from "react-router-dom";
 
 const SupplyCard = ({ items }: any) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const { image, title, amount, category, description } = items;
   const [addDonation] = useAddDonationsMutation();
   const email = useAppSelector((state) => state.login.user?.email);
+  const isAuthenticate = useAppSelector((state) => state.login.user);
+  const navigate = useNavigate();
 
   const handleCancel = () => {
     setIsModalOpen(false);
   };
 
   const handleDonate = async (amount: number) => {
+    if (!isAuthenticate) {
+      navigate("/login");
+    }
+
     const toastId = toast.loading("Donating....");
 
     const donationData = {
