@@ -1,16 +1,44 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import { Card } from "antd";
+import { Button, Card } from "antd";
 import Meta from "antd/es/card/Meta";
 import ModalUi from "./Modal";
 import { useState } from "react";
 import { useTheme } from "../../context/ThemeContaxt";
+import { useAddDonationsMutation } from "../../redux/features/user/donationApi";
+import { toast } from "sonner";
+import { TResponse } from "../../types/global";
+import { useAppSelector } from "../../redux/hooks";
 
 const SupplyCard = ({ items }: any) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const { image, title, amount, category, description } = items;
+  const [addDonation] = useAddDonationsMutation();
+  const email = useAppSelector((state) => state.login.user?.email);
 
   const handleCancel = () => {
     setIsModalOpen(false);
+  };
+
+  const handleDonate = async (amount: number) => {
+    const toastId = toast.loading("Donating....");
+
+    const donationData = {
+      email,
+      amount,
+    };
+
+    try {
+      const res = (await addDonation(donationData)) as TResponse<any>;
+      console.log(res);
+
+      if (res.error) {
+        toast.error(res.error.data.message, { id: toastId });
+      } else {
+        toast.success("Donation done", { id: toastId });
+      }
+    } catch (err) {
+      toast.error("Something went wrong", { id: toastId });
+    }
   };
 
   const { theme } = useTheme();
@@ -54,6 +82,7 @@ const SupplyCard = ({ items }: any) => {
               <p>
                 <span className="font-semibold">Amount:</span> {amount}
               </p>
+              <Button onClick={() => handleDonate(amount)}>Donate</Button>
             </div>
           </div>
         </div>
