@@ -55,7 +55,7 @@ const SupplyCard = ({ items }: any) => {
           <p>Amount: {amount}</p>
           <button
             onClick={() => setIsModalOpen(!isModalOpen)}
-            className="custom-btn-outline py-1"
+            className="custom-btn-outline py-1 text-xs md:text-sm"
           >
             View details
           </button>
@@ -82,7 +82,13 @@ const SupplyCard = ({ items }: any) => {
               <p>
                 <span className="font-semibold">Amount:</span> {amount}
               </p>
-              <Button onClick={() => handleDonate(amount)}>Donate</Button>
+              <Button
+                className="w-full"
+                size="large"
+                onClick={() => handleDonate(amount)}
+              >
+                Donate
+              </Button>
             </div>
           </div>
         </div>

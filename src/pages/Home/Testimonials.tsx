@@ -109,7 +109,7 @@ const Testimonials = () => {
               alt=""
             />
             <p className="text-3xl md:text-5xl font-semibold ">{items.name}</p>
-            <p className="text-sm md:text-lg text-gray-600 mt-4 w-[40ch] md:w-[80ch] mx-auto">
+            <p className="text-sm md:text-lg text-gray-500 mt-4 w-[40ch] md:w-[80ch] mx-auto">
               {items.description}
             </p>
           </div>

@@ -80,7 +80,7 @@ const Navbar = () => {
     <div className="overflow-hidden">
       <motion.div
         style={{ background: theme.background, color: theme.text }}
-        className={`w-full fixed z-40 drop-shadow-lg  text-black md:h-16 `}
+        className={`md:w-full w-screen fixed z-40 drop-shadow-lg  text-black md:h-16 `}
         variants={navAnimation}
         initial="hidden"
         animate="visible"
@@ -93,8 +93,6 @@ const Navbar = () => {
                 className="inline-flex items-center justify-center p-2 rounded-md  hover:text-white bg-gray-400 drop-shadow-md"
                 onClick={toggleNavbar}
               >
-                <span className="sr-only">Open main menu</span>
-
                 <span className={`${isOpen ? "hidden" : "block"} h-6 w-6`}>
                   <MenuOutlined />
                 </span>

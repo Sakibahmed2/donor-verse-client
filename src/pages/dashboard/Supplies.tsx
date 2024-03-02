@@ -41,10 +41,11 @@ const Supplies = () => {
   return (
     <div
       className="overflow-x-auto rounded-lg
+       border-2 shadow-lg 
     "
     >
-      <table className="table-auto min-w-full divide-y divide-gray-200 ">
-        <thead className="bg-gray-200 h-12 text-xl">
+      <table className="table-auto min-w-full divide-y divide-gray-200">
+        <thead className="bg-gray-300 h-12 text-xl">
           <tr>
             <th className="px-6 py-3 text-left text-sm font-medium uppercase tracking-wider">
               #
@@ -63,7 +64,7 @@ const Supplies = () => {
             </th>
           </tr>
         </thead>
-        <tbody className=" bg-opacity-50 divide-y divide-zinc-200 font-semibold">
+        <tbody className="  bg-zinc-100 divide-y divide-zinc-200 font-semibold">
           {data?.data.map((items: TSupplyItems, index: number) => (
             <tr key={index}>
               <td className="px-6 py-4 whitespace-nowrap">{index + 1}</td>

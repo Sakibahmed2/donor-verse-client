@@ -1,10 +1,10 @@
 // ThemeContext.tsx
-import React, {
-  createContext,
-  useState,
-  useEffect,
-  useContext,
+import {
   ReactNode,
+  createContext,
+  useContext,
+  useEffect,
+  useState,
 } from "react";
 
 type Theme = {
