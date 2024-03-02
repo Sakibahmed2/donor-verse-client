@@ -47,25 +47,30 @@ const Navbar = () => {
         <>
           <NavLink to="/volunteer">Become volunteer</NavLink>
           <NavLink to="/dashboard">Dashboard</NavLink>
+          <NavLink to="/community">Community</NavLink>
 
-          <button
-            className="custom-btn py-1 px-2 font-normal"
-            onClick={handleLogout}
-          >
-            Logout
-          </button>
+          <NavLink to="/">
+            <button
+              className="custom-btn py-1 px-2 font-normal text-sm"
+              onClick={handleLogout}
+            >
+              Logout
+            </button>
+          </NavLink>
         </>
       ) : (
         <NavLink to="/login">
-          <button className="custom-btn py-1 px-2 font-normal">Login</button>
+          <button className="custom-btn py-1 px-2 font-normal text-sm">
+            Login
+          </button>
         </NavLink>
       )}
       <Switch
+        defaultChecked
         onChange={toggleTheme}
         checkedChildren={"Dark"}
         unCheckedChildren={"Light"}
-        defaultChecked
-        className="w-14"
+        className="w-14 text-black bg-black"
       />
     </>
   );

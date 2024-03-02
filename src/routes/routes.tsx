@@ -11,6 +11,7 @@ import Dashboard from "../pages/dashboard/Dashboard";
 import CreateTestimonial from "../pages/dashboard/CreateTestimonial";
 import VolunteerForm from "../pages/volunteer/VolunteerForm";
 import AboutUs from "../pages/About/AboutUs";
+import Community from "../pages/Community/Community";
 
 const routes = createBrowserRouter([
   {
@@ -32,6 +33,10 @@ const routes = createBrowserRouter([
       {
         path: "/about-us",
         element: <AboutUs />,
+      },
+      {
+        path: "/community",
+        element: <Community />,
       },
     ],
   },

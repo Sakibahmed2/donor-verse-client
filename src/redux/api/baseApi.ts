@@ -11,13 +11,3 @@ export const baseApi = createApi({
   tagTypes: ["supplies"],
   endpoints: () => ({}),
 });
-
-// {
-//   // prepareHeaders: (headers, { getState }) => {
-//   //   const token = (getState() as RootState).login.token;
-//   //   if (token) {
-//   //     headers.set("authorization", `${token}`);
-//   //   }
-//   //   return headers;
-//   // },
-// }

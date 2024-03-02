@@ -5,9 +5,15 @@ type TInputProps = {
   name: string;
   label?: string;
   defaultValue?: string;
+  placeholder?: string;
 };
 
-const MyTextArea = ({ name, label, defaultValue }: TInputProps) => {
+const MyTextArea = ({
+  name,
+  label,
+  defaultValue,
+  placeholder,
+}: TInputProps) => {
   return (
     <div className="mb-5">
       {label ? label : null}
@@ -17,7 +23,7 @@ const MyTextArea = ({ name, label, defaultValue }: TInputProps) => {
           <TextArea
             {...field}
             rows={4}
-            placeholder={label}
+            placeholder={placeholder ? placeholder : label}
             name={name}
             id={name}
             defaultValue={defaultValue}
