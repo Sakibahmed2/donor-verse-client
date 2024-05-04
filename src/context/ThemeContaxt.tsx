@@ -38,9 +38,13 @@ export const ThemeProvider = ({ children }: { children: ReactNode }) => {
     return savedTheme ? JSON.parse(savedTheme) : defaultTheme;
   });
 
+  // Check if no theme is saved in localStorage, set default light mode theme
   useEffect(() => {
-    localStorage.setItem("theme", JSON.stringify(theme));
-  }, [theme]);
+    const savedTheme = localStorage.getItem("theme");
+    if (!savedTheme) {
+      localStorage.setItem("theme", JSON.stringify(defaultTheme));
+    }
+  }, []);
 
   const toggleTheme = () => {
     setTheme((prevTheme) =>

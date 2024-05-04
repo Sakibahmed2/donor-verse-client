@@ -1,5 +1,5 @@
 import { useGetAllSupplyQuery } from "../../redux/features/user/supplyApi";
-import { Carousel, Spin } from "antd";
+import { Spin } from "antd";
 import Container from "../../components/ui/Container";
 import { TSupplyItems } from "./SuppliesHome";
 import SectionTitle from "../../components/ui/SectionTitle";
@@ -21,8 +21,28 @@ const Gallery = () => {
       <div>
         <SectionTitle heading="Gallery" />
       </div>
+      <div className="grid grid-cols-2 md:grid-cols-3 gap-8">
+        {data?.data?.slice(2, 8).map((items: TSupplyItems) => (
+          <div
+            key={items._id}
+            className="bg-white rounded-md overflow-hidden shadow-lg transition-transform transform hover:scale-105"
+          >
+            <img
+              src={items.image}
+              className="w-full md:h-64 object-cover object-center"
+              alt={items.title}
+            />
+            <div className="p-4">
+              <p className="text-lg font-semibold text-gray-800 mb-2">
+                {items.title}
+              </p>
+              {/* Additional details if needed */}
+            </div>
+          </div>
+        ))}
+      </div>
 
-      <div>
+      {/* <div>
         <Carousel autoplay speed={500}>
           {data?.data.map((items: TSupplyItems) => (
             <div
@@ -40,7 +60,7 @@ const Gallery = () => {
             </div>
           ))}
         </Carousel>
-      </div>
+      </div> */}
     </Container>
   );
 };

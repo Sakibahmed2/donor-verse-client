@@ -5,19 +5,36 @@ import { toast } from "sonner";
 import { Button } from "antd";
 import { Link, useNavigate } from "react-router-dom";
 import { useAddUserMutation } from "../../redux/features/auth/register/registerApi";
+import { TResponse } from "../../types/global";
+
+type TUserRegister = {
+  name: string;
+  email: string;
+  password: string;
+};
 
 const Register = () => {
-  const [addUser, { error, isSuccess }] = useAddUserMutation();
+  const [addUser, { data }] = useAddUserMutation();
+  console.log(data);
   const navigate = useNavigate();
 
-  const onSubmit = (data: FieldValues) => {
-    addUser(data);
-    if (error) {
-      return toast.error("something went wrong");
-    }
-    if (isSuccess) {
-      toast.success("User created successfully");
-      navigate("/login");
+  const onSubmit = async (data: FieldValues) => {
+    const toastId = toast.loading("Creating...");
+
+    console.log(data);
+
+    try {
+      const res = (await addUser(data)) as TResponse<TUserRegister>;
+      console.log(res);
+
+      if (res.error) {
+        toast.error(res.error.data.message, { id: toastId });
+      } else {
+        toast.success("User created", { id: toastId });
+        navigate("/login");
+      }
+    } catch (err) {
+      toast.error("Something went wrong", { id: toastId });
     }
   };
 

@@ -27,7 +27,7 @@ const SuppliesHome = () => {
     <Container className="mt-40 mb-10">
       <SectionTitle heading="Supply posts" />
       <div className="mx-auto">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 place-items-center place-content-center">
+        <div className="grid grid-cols-2 md:grid-cols-3 gap-4 place-items-center place-content-center">
           {sixSupply?.map((items: TSupplyItems) => (
             <SupplyCard key={items._id} items={items} />
           ))}

@@ -8,6 +8,8 @@ import { useTheme } from "../../context/ThemeContaxt";
 import { logOut } from "../../redux/features/auth/Login/loginSlice";
 import { useAppDispatch, useAppSelector } from "../../redux/hooks";
 
+import "./Navbar.css";
+
 const navAnimation = {
   hidden: {
     y: -200,
@@ -90,7 +92,7 @@ const Navbar = () => {
             <div className="absolute inset-y-0 left-0 flex items-center sm:hidden">
               {/* Mobile menu button */}
               <button
-                className="inline-flex items-center justify-center p-2 rounded-md  hover:text-white bg-gray-400 drop-shadow-md"
+                className="inline-flex items-center justify-center p-2 rounded-sm bg-gray-100 "
                 onClick={toggleNavbar}
               >
                 <span className={`${isOpen ? "hidden" : "block"} h-6 w-6`}>
@@ -105,12 +107,14 @@ const Navbar = () => {
             <div className="flex justify-between  items-center w-9/12 mx-auto">
               {/* Logo */}
               <div className="flex-shrink-0 flex items-center">
-                <img className="size-20" src={logo} alt="" />
+                <NavLink to={"/"}>
+                  <img className="size-20" src={logo} alt="" />
+                </NavLink>
               </div>
               {/* Navigation links */}
               <div className="hidden sm:block sm:ml-6 ">
                 <nav>
-                  <ul className="flex items-center space-x-5 justify-end  text-lg">
+                  <ul className="flex items-center space-x-5 justify-end text-[16px]">
                     {navOption}
                   </ul>
                 </nav>

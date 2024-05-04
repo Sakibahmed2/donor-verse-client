@@ -20,6 +20,7 @@ const textAnimation = {
     },
   },
 };
+
 const imageAnimation = {
   hidden: {
     x: 1200,
@@ -42,8 +43,8 @@ const Banner = () => {
   return (
     <div className="overflow-hidden">
       <Container className="md:h-screen md:mb-0 mb-20 pt-44">
-        <div className="h-[720px] w-full max-w-[331px] md:max-w-[531px] bg-[#5FD479] rounded-full absolute -z-10 translate-x-[-50%] rotate-45 blur-[90px] opacity-20"></div>
-        <div className="h-[520px] w-full max-w-[331px] md:max-w-[331px] bg-[#FC6736] rounded-full absolute top-0 right-80 -z-10 translate-x-[50%] -rotate-45 blur-[90px] opacity-20"></div>
+        <div className="h-[620px] w-full max-w-[331px] md:max-w-[531px] bg-[#5FD479] rounded-full absolute z-10 translate-x-[-50%] rotate-45 blur-[90px] opacity-30"></div>
+        <div className="h-[520px] w-full max-w-[331px] md:max-w-[331px] bg-[#FC6736] rounded-full absolute top-0 right-80 -z-9 translate-x-[50%] -rotate-45 blur-[90px] opacity-30"></div>
         <div className="md:flex justify-center items-center w-full">
           <motion.div
             className="w-full max-w-[800px]"
